@@ -17,13 +17,17 @@ nav ul {
 
 nav ul li {
    margin: 0.15px;
-   list-style: none;
+   list-style-type: none;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   gap: 20px;
 }
 
 nav ul li a {
    text-decoration: none;
    color: white;
-   font-size: 20px;
+   font-size: 18px;
    font-weight: bold;
    padding: 10px;
    transition: 0.3s ease;
@@ -75,6 +79,7 @@ button {
    color: white;
    border: none;
    font-size: 16px;
+   text-align: center;
    cursor: pointer;
    border-radius: 5px;
    transition: 0.3s;
@@ -103,115 +108,11 @@ button:hover {
 }
 
 
-.container1 {
-   background-color: rgb(199, 220, 240);
-   margin: 70px;
-   padding: 5px;
-   height: 250px;
-   text-align: center;
-   border-radius: 1rem;
-   transition: 0.5s;
-   box-shadow: 2px 2px 10px rgba(20, 154, 184, 0.2);
-   font-style: oblique;
-   font-size: larger;
-}
-
-.container1:hover { 
-   transform: scale(1.02);
-   background-color: rgb(139, 165, 189);
-}
-
-
-
-.container2 {
-   background-color: rgb(199, 220, 240);
-   margin: 70px;
-   padding: 5px;
-   list-style: none;
-   height: 400px;
-   text-align: center;
-   border-radius: 1rem;
-   transition: 0.5s;
-   box-shadow: 2px 2px 10px rgba(20, 154, 184, 0.2);
-   font-style: oblique;
-   font-size: larger;
-}
-
-.container2:hover { 
-   transform: scale(1.02);
-   background-color: rgb(139, 165, 189);
-}
-
-.container2 ul {
-   list-style: none;
-}
-
-.container3 {
-   background-color: rgb(199, 220, 240);
-   margin: 70px;
-   padding: 5px;
-   text-align: center;
-   border-radius: 1rem;
-   transition: 0.5s;
-   box-shadow: 2px 2px 10px rgba(20, 154, 184, 0.2);
-   font-style: oblique;
-   font-size: larger;
-}
-
-.container3:hover { 
-   transform: scale(1.02);
-   background-color: rgb(139, 165, 189);
-}
-
-.container3 ul {
-   list-style: none;
-}
-
-.container4 {
-   background-color: rgb(199, 220, 240);
-   margin: 70px;
-   padding: 5px;
-   text-align: center;
-   border-radius: 1rem;
-   transition: 0.5s;
-   box-shadow: 2px 2px 10px rgba(20, 154, 184, 0.2);
-   font-style: oblique;
-   font-size: larger;
-}
-
-.container4:hover { 
-   transform: scale(1.02);
-   background-color: rgb(139, 165, 189);
-}
-
-.container4 ul {
-   list-style: none;
-}
-
-.container5 {
-   background-color: rgb(199, 220, 240);
-   margin: 70px;
-   padding: 5px;
-   text-align: center;
-   border-radius: 1rem;
-   transition: 0.5s;
-   box-shadow: 2px 2px 10px rgba(20, 154, 184, 0.2);
-   font-style: oblique;
-   font-size: larger;
-  
-
-}
-
-.container5:hover { 
-   transform: scale(1.02);
-   background-color: rgb(139, 165, 189);
-}
-
-.container5 ul {
-   list-style: none;
-}
-
-
+.container1,
+.container2,
+.container3,
+.container4,
+.container5,
 .container6 {
    background-color: rgb(199, 220, 240);
    margin: 70px;
@@ -224,22 +125,33 @@ button:hover {
    font-size: larger;
 }
 
-.container6:hover { 
+.container1:hover,
+.container2:hover,
+.container3:hover,
+.container4:hover,
+.container5:hover,
+.container6:hover{ 
    transform: scale(1.02);
    background-color: rgb(139, 165, 189);
 }
 
+.container1 ul,
+.container2 ul,
+.container3 ul,
+.container4 ul,
+.container5 ul,
 .container6 ul {
    list-style: none;
 }
 
 .contact {
+   margin-top: 20px;
+   margin-bottom: 20px;
    display: flex;
    align-items: center;
    justify-content: center;
    text-align: center;
 }
-
 
 form {
    background-color: #c4d2f3f0;
@@ -274,54 +186,94 @@ input {
 }
 
 button {
-   width: 340px;
+   width: 300px;
    height: 40px;
    border-radius:10px ;
 }
 
-.portfolio-item {
-    width: 48%;
-    box-sizing: border-box;
-    font-size: larger;
-    margin: 50px;
-    padding: 10px;
-    height: 300px;
-    background-color: rgb(189, 214, 239);
-    border-radius: 5px;
+.portfolio {
     text-align: center;
-    transition: transform 0.5s ease-in-out;
-    padding: 5px;
-    box-shadow: 2px 2px 10px rgba(7, 60, 71, 0.2);
-    font-style: oblique;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
+.portfolio-item {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 3px solid #2f2f68;
+    border-radius: 12px;
+    background-color: rgb(216, 233, 250);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .portfolio-item {
+        width: 90%;
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+/* Hover effects */
 .portfolio-item:hover {
     transform: scale(1.05);
-    
-}
-.portfolio-list {
-   display: flex;
-   text-align: center;
-   justify-content: center;
-   list-style: none;
-   text-decoration: none;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.portfolio-list a {
-   padding: 10px 20px;
-   background-color: rgb(84, 121, 156);
-   color: white;
-   border: none;
-   text-decoration: none;
-   font-size: 16px;
-   cursor: pointer;
-   border-radius: 5px;
-   transition: 0.3s;
+.portfolio-item h3 {
+    color: #2f2f68;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
-.portfolio-list a:hover {
-   background-color: rgb(52, 89, 126);
-   transform: scale(1.07);
+.portfolio-item p {
+    font-size: 1.2em;
+    color: #444;
+}
+
+.portfolio-item a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #7171bb;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item a:hover {
+    background-color: #1d1d40;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Make items appear in one row for larger screens */
+@media (min-width: 768px) {
+    .portfolio-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .portfolio-item {
+        width: 30%;
+    }
+}
+
+/* Adjust for smaller screens (mobile-friendly) */
+@media (max-width: 767px) {
+    .portfolio-item {
+        width: 100%;
+    }
 }
 
 footer {
@@ -330,6 +282,7 @@ footer {
    color: white;
    font-weight: bold;
    font-size: 20px;
+   margin: 0%;
 }
 
 .social-links {
@@ -350,4 +303,49 @@ footer {
 }
 
 
+@media screen and (max-width: 480px) {
+  nav ul li a {
+   font-size: 15px;
+   font-weight: bold;
+   padding: 5px;
+   
+}
+.portfolio-item{
+   width: 100%!important;
+   display: block;
+}
+}
 
+@media (min-width: 768px) {
+    form {
+        width: 50%;
+        margin: auto;
+    }
+
+    input, textarea {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    button {
+        width: 100%; /* Full width for mobile */
+        max-width: 320px;
+        font-size: 14px;
+        padding: 12px;
+        margin: 15px auto; /* Center button */
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+   button {
+       width: 90%; /* Makes it take up 90% of the screen width */
+       max-width: 320px; /* Prevents it from getting too large */
+       height: 45px; /* Slightly larger for better tap interaction */
+       font-size: 16px; /* Readable on mobile */
+       padding: 12px;
+       display: block;
+       margin: 10px auto; /* Centers the button */
+   }
+}
